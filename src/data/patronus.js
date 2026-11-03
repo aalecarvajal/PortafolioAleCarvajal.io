@@ -1,6 +1,14 @@
 // Cada objeto es un patronus. 
 export const patronus = [
   {
+    nombre: 'Abejas',
+    skill: 'Comunicación',
+    imagen: '/animales/abejas.png',
+    descripcion: 'Mi mayor fortaleza es la comunicación. Tengo una gran capacidad para escuchar, entender y transmitir a otros una idea clara y adaptada a su perspectiva. Por ejemplo, en producción de TV me asignaban para escuchar las indicaciones del productor, interpretarlas y comunicarlas al equipo.',
+    justificacion: 'Las abejas tienen un gran método de comunicación: bailan. Lo hacen para indicar a sus compañeras dónde hay polen para comer. Su comunicación es tan efectiva que transmiten la dirección, la distancia y la calidad del polen.',
+  },
+
+{
     nombre: 'Búfalo',
     skill: 'Colaboración con propósito',
     imagen: '/animales/bufalo.png',
@@ -28,13 +36,7 @@ export const patronus = [
     descripcion: 'Me gusta usar la creatividad como herramienta para la resolución de problemas: si algo no está funcionando, es porque necesita un cambio. Muchas veces las ideas creativas son las que nos dan una solución.',
     justificacion: 'Los castores son grandes innovadores. Para mejorar su hábitat y asegurar su supervivencia, construyen presas desde cero para bloquear flujos de agua o hacer pequeños arroyos.',
   },
-  {
-    nombre: 'Abejas',
-    skill: 'Comunicación',
-    imagen: '/animales/abejas.png',
-    descripcion: 'Mi mayor fortaleza es la comunicación. Tengo una gran capacidad para escuchar, entender y transmitir a otros una idea clara y adaptada a su perspectiva. Por ejemplo, en producción de TV me asignaban para escuchar las indicaciones del productor, interpretarlas y comunicarlas al equipo.',
-    justificacion: 'Las abejas tienen un gran método de comunicación: bailan. Lo hacen para indicar a sus compañeras dónde hay polen para comer. Su comunicación es tan efectiva que transmiten la dirección, la distancia y la calidad del polen.',
-  },
+
   {
     nombre: 'Lobo gris',
     skill: 'Resiliencia',
@@ -45,7 +47,7 @@ export const patronus = [
 
   {
     nombre: 'Lémur',
-    skill: 'Mi patronus es el lemur',
+    skill: 'Mi patronus es el lémur',
     imagen: '/animales/lemur.png',
     descripcion: 'El lémur es mi animal favorito, y no solo porque sea adorable: es curioso, sociable y siempre está explorando. Creo que nos parecemos bastante.',
     justificacion: 'Los lémures de cola anillada toman el sol cada mañana sentados con los brazos abiertos, como en una pose de yoga. Así recargan energía antes de empezar el día.',

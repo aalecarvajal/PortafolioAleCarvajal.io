@@ -8,10 +8,12 @@
   --color-texto: #e5cdf6;
   --color-acento: #cb6ce6;
   --altura-navbar: 59px;
-  --ancho-sidebar: 180px;
+  --ancho-sidebar: 220px;
   --espacio-seccion: 2rem; 
   --altura-titulo-hero: 160px;
-  --espacio-lateral: 3rem; 
+  --espacio-lateral: 3rem;
+  --fuente-texto: 'Noto Serif', serif;
+  --bs-body-font-family: var(--fuente-texto);
 }
 
 /* ===========================
@@ -68,6 +70,21 @@ body {
   border-right: 1px dashed var(--color-acento);
 }
 
+.sidebar-instruccion {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  font-style: italic;
+  text-align: center;
+  color: var(--color-acento);
+  opacity: 0.85;
+  animation: pulso 2.5s ease-in-out infinite;
+}
+
+  @keyframes pulso {
+  0%, 100% { opacity: 0.5; }
+  50%      { opacity: 1; }
+}
+
 /* ===========================
    TÍTULOS (componente reutilizable)
    =========================== */
@@ -112,7 +129,6 @@ body {
   width: 100%;
 }
 
-/* Quitamos el aspecto de botón del navegador */
 .patronus {
   width: 100%;
   padding: 0;
