@@ -13,5 +13,9 @@
   },
   "allowScripts": {
     "fsevents@2.3.3": true
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "gsap": "^3.15.0"
   }
 }
