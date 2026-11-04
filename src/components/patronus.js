@@ -12,13 +12,13 @@ export function crearPatronus(datos) {
   boton.innerHTML = `
     <img class="patronus-imagen" src="${datos.imagen}" alt="Patronus ${datos.nombre}" />
 
-    <span class="tarjeta-patronus tarjeta-descripcion">
+    <span class="tarjeta tarjeta-patronus tarjeta-descripcion">
       <span class="tarjeta-titulo">${datos.skill}</span>
       <span class="tarjeta-texto">${datos.descripcion}</span>
       <span class="tarjeta-flecha" aria-hidden="true">➜</span>
     </span>
 
-    <span class="tarjeta-patronus tarjeta-justificacion">
+    <span class="tarjeta tarjeta-patronus tarjeta-justificacion">
       <span class="tarjeta-titulo">${datos.nombre}</span>
       <span class="tarjeta-texto">${datos.justificacion}</span>
     </span>

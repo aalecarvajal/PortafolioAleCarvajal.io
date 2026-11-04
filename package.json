@@ -17,6 +17,7 @@
   "dependencies": {
     "@fontsource/noto-serif": "^5.3.0",
     "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.2",
     "gsap": "^3.15.0"
   }
 }
