@@ -1,3 +1,5 @@
+import { rutaPublica } from '../utils/rutas.js';
+
 // Mis enlaces en UN solo lugar. Si cambio uno aquí, se actualiza en toda la página.
 export const redes = [
   {
@@ -13,7 +15,7 @@ export const redes = [
 
     {
     nombre: 'Descargar CV',
-    url: '/cv-ale-carvajal.pdf',
+    url: rutaPublica('cv-ale-carvajal.pdf'),
     icono: 'bi-file-earmark-arrow-down',
     descargar: true,
   },
