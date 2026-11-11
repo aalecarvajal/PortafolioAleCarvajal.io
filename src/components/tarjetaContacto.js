@@ -1,6 +1,4 @@
-/**
-Se usa en el Hero y en Contacto.
- */
+// Tarjeta con correo y celular. Se usa en el Hero y en Contacto.
 export function crearTarjetaContacto(datos) {
   const tarjeta = document.createElement('address');
   tarjeta.className = 'tarjeta tarjeta-contacto';

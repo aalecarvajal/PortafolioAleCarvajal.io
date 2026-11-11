@@ -1,6 +1,6 @@
 import { rutaPublica } from '../utils/rutas.js';
 
-// Mis enlaces en UN solo lugar. Si cambio uno aquí, se actualiza en toda la página.
+// Si cambio un enlace aquí, se actualiza en toda la página
 export const redes = [
   {
     nombre: 'GitHub',
@@ -12,13 +12,10 @@ export const redes = [
     url: 'https://www.linkedin.com/in/aalecarvajal/',
     icono: 'bi-linkedin',
   },
-
-    {
+  {
     nombre: 'Descargar CV',
     url: rutaPublica('cv-ale-carvajal.pdf'),
     icono: 'bi-file-earmark-arrow-down',
     descargar: true,
   },
 ];
-  
-

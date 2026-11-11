@@ -1,6 +1,6 @@
 import { rutaPublica } from '../utils/rutas.js';
 
-// Cada objeto es un patronus. 
+// Cada objeto es un patronus de la barra lateral
 export const patronus = [
   {
     nombre: 'Abejas',
@@ -9,8 +9,7 @@ export const patronus = [
     descripcion: 'Mi mayor fortaleza es la comunicación. Tengo una gran capacidad para escuchar, entender y transmitir a otros una idea clara y adaptada a su perspectiva. Por ejemplo, en producción de TV me asignaban para escuchar las indicaciones del productor, interpretarlas y comunicarlas al equipo.',
     justificacion: 'Las abejas tienen un gran método de comunicación: bailan. Lo hacen para indicar a sus compañeras dónde hay polen para comer. Su comunicación es tan efectiva que transmiten la dirección, la distancia y la calidad del polen.',
   },
-
-{
+  {
     nombre: 'Búfalo',
     skill: 'Colaboración con propósito',
     imagen: rutaPublica('animales/bufalo.png'),
@@ -38,7 +37,6 @@ export const patronus = [
     descripcion: 'Me gusta usar la creatividad como herramienta para la resolución de problemas: si algo no está funcionando, es porque necesita un cambio. Muchas veces las ideas creativas son las que nos dan una solución.',
     justificacion: 'Los castores son grandes innovadores. Para mejorar su hábitat y asegurar su supervivencia, construyen presas desde cero para bloquear flujos de agua o hacer pequeños arroyos.',
   },
-
   {
     nombre: 'Lobo gris',
     skill: 'Resiliencia',
@@ -46,7 +44,6 @@ export const patronus = [
     descripcion: 'La resiliencia la he ganado a lo largo de mi trayectoria. He aprendido a ser flexible y a reconocer la importancia de tener una motivación clara que me sirva de guía, y esto me impulsa a seguir adelante.',
     justificacion: 'El lobo gris es capaz de recorrer hasta 50 km al día en busca de alimento. En el camino enfrenta climas hostiles y hambre, pero sigue adelante en búsqueda de su objetivo.',
   },
-
   {
     nombre: 'Lémur',
     skill: 'Mi patronus es el lémur',

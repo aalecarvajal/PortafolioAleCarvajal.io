@@ -1,13 +1,11 @@
-// Los 3 estados posibles de un patronus, en el orden en que se recorren
+// Orden en que se recorren los estados con cada clic
 const ESTADOS = ['animal', 'descripcion', 'justificacion'];
-
 
 export function crearPatronus(datos) {
   const boton = document.createElement('button');
   boton.type = 'button';
   boton.className = 'patronus';
-  boton.dataset.estado = 'animal';   // estado inicial
-  boton.setAttribute('aria-label', `${datos.nombre}: ${datos.skill}`);
+  boton.dataset.estado = 'animal';
 
   boton.innerHTML = `
     <img class="patronus-imagen" src="${datos.imagen}" alt="Patronus ${datos.nombre}" />
@@ -24,7 +22,6 @@ export function crearPatronus(datos) {
     </span>
   `;
 
-  // Cada clic avanza al siguiente estado
   let paso = 0;
   boton.addEventListener('click', () => {
     paso = (paso + 1) % ESTADOS.length;
