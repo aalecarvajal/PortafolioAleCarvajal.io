@@ -6,11 +6,12 @@
   --color-texto: #e5cdf6;
   --color-acento: #cb6ce6;
   --altura-navbar: 59px;
-  --ancho-sidebar: 220px;
+  --ancho-sidebar: 260px;
   --espacio-seccion: 2rem;
   --espacio-lateral: 3rem;
   --altura-titulo-hero: 160px;
-  --bs-body-font-family: 'Noto Serif', serif; /* sobrescribe la fuente de Bootstrap */
+  --bs-body-font-family: 'Poppins', sans-serif; /* sobrescribe la fuente de Bootstrap */
+  --fuente-titulos: 'League Spartan', sans-serif;
 }
 
 /* ===========================
@@ -52,10 +53,25 @@ body {
    SECCIONES
    =========================== */
 .seccion {
-  min-height: 100vh;
   padding-top: calc(var(--altura-navbar) + var(--espacio-seccion));
   padding-bottom: 4rem;
   padding-inline: var(--espacio-lateral);
+}
+
+/* Botón ES | EN: el idioma activo se ve más brillante */
+.boton-idioma {
+  --bs-btn-padding-y: 0.2rem;
+  --bs-btn-padding-x: 0.8rem;
+  font-size: 0.85rem;
+}
+
+.boton-idioma [data-idioma] {
+  opacity: 0.55;
+}
+
+.boton-idioma [data-idioma].activo {
+  opacity: 1;
+  font-weight: 700;
 }
 
 /* ===========================
@@ -88,26 +104,40 @@ body {
 /* ===========================
    TÍTULOS (reutilizable)
    =========================== */
-.titulo-imagen {
-  display: block;
-  height: 56px;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain; /* si se encoge en celular, no se deforma */
+/* Todos los títulos comparten esta clase: misma fuente y mismo brillo neón */
+.titulo-neon {
+  margin-bottom: 0;
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase; /* en el HTML se escribe normal; aquí se ve en mayúsculas */
+  color: #fff;
+  /* varias sombras encimadas = efecto de luz neón */
+  text-shadow:
+    0 0 2px #fff,
+    0 0 10px var(--color-acento),
+    0 0 22px var(--color-acento);
 }
 
-.titulo-imagen--hero {
-  height: var(--altura-titulo-hero);
+/* Tamaños según dónde se usa el título */
+.titulo-seccion {
+  font-size: 2.5rem;
 }
 
-.sidebar-titulo .titulo-imagen {
-  height: 60px;
+.titulo-hero {
+  /* clamp(mínimo, ideal, máximo): crece con la pantalla sin pasarse */
+  font-size: clamp(2rem, 3vw, 2.9rem);
+  /* El nombre ocupa un bloque de alto fijo y se centra verticalmente dentro de él,
+     así queda a la misma distancia de la navbar que del texto de abajo */
+  min-height: var(--altura-titulo-hero);
+  display: flex;
+  align-items: center;
 }
 
-.efecto-neon {
-  filter:
-    drop-shadow(0 0 1px #fff)
-    drop-shadow(0 0 10px var(--color-acento));
+.sidebar-titulo {
+  font-size: 1.6rem;
+  text-align: center;
 }
 
 /* ===========================
@@ -130,6 +160,19 @@ body {
 .tarjeta-texto {
   display: block;
   font-weight: 600;
+}
+
+/* Efecto de brillo (reutilizable): agrega la clase "tarjeta-brillo" a cualquier tarjeta.
+   Al pasar el mouse, la tarjeta sube, brilla alrededor y su borde se ilumina. */
+.tarjeta-brillo {
+  /* "transition" anima los cambios del :hover en lugar de que sean de golpe */
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.tarjeta-brillo:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 30px rgba(203, 108, 230, 0.45);
+  border-color: rgba(203, 108, 230, 0.8);
 }
 
 /* ===========================
@@ -199,12 +242,8 @@ body {
 .hero-texto {
   max-width: 38rem;
   margin-block: 2rem;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   line-height: 1.5;
-}
-
-.hero-texto strong {
-  color: #fff;
 }
 
 .foto-hero {
@@ -219,11 +258,167 @@ body {
 }
 
 /* ===========================
+   SOBRE MÍ
+   =========================== */
+.texto-seccion {
+  max-width: 50rem;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.texto-seccion p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===========================
+   PROYECTOS
+   =========================== */
+.tarjeta-proyecto {
+  padding: 1.5rem;
+  font-size: 0.9rem; /* letra un poco más chica en toda la tarjeta */
+}
+
+/* En celular la tarjeta necesita menos relleno para que el contenido respire */
+@media (max-width: 575.98px) {
+  .tarjeta-proyecto {
+    padding: 0.75rem;
+  }
+}
+
+.proyecto-media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1462 / 898; /* misma proporción que el video y la portada */
+  object-fit: cover;
+  border-radius: 1rem;
+  background-color: #000;
+  box-shadow: 0 0 20px rgba(203, 108, 230, 0.25);
+}
+
+/* El resumen del proyecto usa .tarjeta-texto, que es seminegrita (600);
+   aquí lo dejamos en peso normal para que se lea más ligero */
+.tarjeta-proyecto .tarjeta-texto {
+  font-weight: 400;
+}
+
+.proyecto-titulo {
+  margin-bottom: 0;
+  font-size: 1.35rem;
+}
+
+.etiqueta-tecnologia {
+  padding: 0.2rem 0.8rem;
+  border: 1px solid var(--color-acento);
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* El acordeón de Bootstrap se personaliza cambiando sus variables, igual que .boton-neon */
+.acordeon-proyecto {
+  --bs-accordion-bg: transparent;
+  --bs-accordion-color: var(--color-texto);
+  --bs-accordion-border-color: rgba(201, 179, 255, 0.35);
+  --bs-accordion-btn-color: var(--color-texto);
+  --bs-accordion-active-color: #fff;
+  --bs-accordion-active-bg: rgba(203, 108, 230, 0.2);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgba(203, 108, 230, 0.4);
+  --bs-accordion-border-radius: 1rem;
+  --bs-accordion-inner-border-radius: 1rem;
+}
+
+/* El botón vive dentro de un <h4>; ambos heredan el tamaño de la tarjeta
+   en lugar del tamaño grande de los títulos h4 */
+.acordeon-proyecto .accordion-header,
+.acordeon-proyecto .accordion-button {
+  font-size: inherit;
+}
+
+.acordeon-proyecto .accordion-button {
+  font-weight: 600;
+}
+
+/* Flechita en color acento. Va en ::after porque el tema oscuro de Bootstrap
+   define ahí mismo su flecha azul, y así la nuestra la reemplaza. */
+.acordeon-proyecto .accordion-button::after {
+  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23cb6ce6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
+  --bs-accordion-btn-active-icon: var(--bs-accordion-btn-icon);
+}
+
+.lista-desafios {
+  padding-left: 1.2rem;
+  margin-bottom: 0;
+}
+
+.lista-desafios li + li {
+  margin-top: 0.5rem;
+}
+
+/* El reto va en su propia línea, con el mismo color y grosor que el resto del texto */
+.lista-desafios strong {
+  display: block;
+  font-weight: 400;
+}
+
+/* ===========================
+   SKILLS
+   =========================== */
+.tarjeta-skill {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.skill-titulo {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.lista-skills {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.lista-skills li + li {
+  margin-top: 0.4rem;
+}
+
+.lista-skills .bi {
+  margin-right: 0.4rem;
+  color: var(--color-acento);
+}
+
+/* ===========================
    CONTACTO
    =========================== */
-.tarjeta-contacto {
-  width: fit-content;
-  padding: 1rem 1.5rem;
+.subtitulo-contacto {
+  font-size: 1.8rem;
+}
+
+.formulario-contacto {
+  padding: 1.5rem;
+}
+
+.formulario-contacto .form-label {
+  font-weight: 600;
+}
+
+/* Campos del formulario con los colores del portafolio */
+.formulario-contacto .form-control {
+  background-color: rgba(18, 6, 46, 0.6);
+  border-color: rgba(201, 179, 255, 0.35);
+  color: var(--color-texto);
+}
+
+.formulario-contacto .form-control::placeholder {
+  color: rgba(229, 205, 246, 0.5);
+}
+
+.formulario-contacto .form-control:focus {
+  border-color: var(--color-acento);
+  box-shadow: 0 0 0 0.2rem rgba(203, 108, 230, 0.35);
+}
+.datos-contacto {
   margin-bottom: 0;
 }
 
