@@ -63,7 +63,7 @@ export const proyectos = [
     ],
     tecnologias: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Java', 'Spring Boot', 'MySQL'],
     enlaces: {
-      github: 'https://github.com/EdGodinez/Ajolote-y-Grulla',
+      github: 'https://github.com/EdGodinez/Ajolote-y-Grulla/tree/develop', // rama develop: es la más actualizada
       demo: 'https://edgodinez.github.io/Ajolote-y-Grulla/',
     },
   },
@@ -113,8 +113,8 @@ export const proyectos = [
     ],
     tecnologias: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Vite', 'Git', 'GitHub'],
     enlaces: {
-      github: '', // pega aquí el enlace al repositorio
-      demo: '',   // pega aquí el enlace a la página publicada
+      github: 'https://github.com/aalecarvajal/hackaton-runup',
+      demo: 'https://aalecarvajal.github.io/hackaton-runup/',
     },
   },
 ];
