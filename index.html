@@ -12,7 +12,6 @@
 <!-- Scrollspy de Bootstrap: resalta en el menú (#menuPrincipal) la sección que se está viendo -->
 <body data-bs-spy="scroll" data-bs-target="#menuPrincipal">
 
-
   <!-- ========== NAVBAR FIJA ========== -->
   <header>
     <nav class="navbar navbar-expand-lg fixed-top navbar-portafolio" aria-label="Navegación principal" data-i18n-aria="nav.etiqueta">
@@ -62,50 +61,54 @@
     <!-- ========== CONTENIDO PRINCIPAL ========== -->
     <main class="flex-grow-1">
 
-<section id="inicio" class="seccion">
-  <div class="container-fluid">
-    <div class="row gx-5 gy-4">
+      <!-- ========== HERO ========== -->
+      <section id="inicio" class="seccion">
+        <div class="container-fluid">
+          <div class="row gx-5 gy-4">
 
-      <!-- Columna de texto -->
-      <div class="col-lg-8 col-xxl-7">
-        <h1 class="titulo-neon titulo-hero"><span id="nombre-hero">Aída Alejandra<br />Carvajal Aguado</span></h1>
+            <!-- Columna de texto -->
+            <div class="col-lg-8 col-xxl-7">
+              <h1 class="titulo-neon titulo-hero"><span id="nombre-hero">Aída Alejandra<br />Carvajal Aguado</span></h1>
 
-        <p class="hero-texto" data-i18n-html="hero.texto">
-          Soy una <strong>Desarrolladora Full Stack Java Jr</strong> con especial interés
-          en el impacto de la colaboración humana para lograr el mejor resultado en el
-          desarrollo de producto. Estoy certificada como <strong>Professional Scrum Master</strong>.
-        </p>
+              <p class="hero-texto" data-i18n-html="hero.texto">
+                Soy una <strong>Desarrolladora Full Stack Java Jr</strong> con especial interés
+                en el impacto de la colaboración humana para lograr el mejor resultado en el
+                desarrollo de producto. Estoy certificada como <strong>Professional Scrum Master</strong>.
+              </p>
 
-        <div class="contenedor-redes"></div>
+              <div class="contenedor-redes"></div>
 
-        <div class="contenedor-datos-contacto mt-4"></div>
+              <div class="contenedor-datos-contacto mt-4"></div>
 
-      </div>
+            </div>
 
-      <!-- Columna de foto -->
-      <div class="col-lg-4 col-xxl-5 align-self-center">
-        <img src="/img/foto-ale.jpg" width="420" height="420" alt="Fotografía de Aída Alejandra Carvajal" data-i18n-alt="hero.foto"
-             class="foto-hero" />
-      </div>
+            <!-- Columna de foto -->
+            <div class="col-lg-4 col-xxl-5 align-self-center">
+              <img src="/img/foto-ale.jpg" width="420" height="420" alt="Fotografía de Aída Alejandra Carvajal" data-i18n-alt="hero.foto"
+                   class="foto-hero" />
+            </div>
 
-    </div>
-  </div>
-</section>
+          </div>
+        </div>
+      </section>
 
+      <!-- ========== PROYECTOS ========== -->
       <section id="proyectos" class="seccion">
         <div class="container-fluid">
-          <h2 class="titulo-neon titulo-seccion" data-i18n="titulos.proyectos">Proyectos</h2>
+          <h2 class="titulo-neon titulo-seccion" data-i18n="nav.proyectos">Proyectos</h2>
           <div id="proyectos-contenedor" class="d-flex flex-column gap-5 mt-4"></div>
         </div>
       </section>
 
+      <!-- ========== SOBRE MÍ ========== -->
       <section id="sobre-mi" class="seccion">
         <div class="container-fluid">
-          <h2 class="titulo-neon titulo-seccion" data-i18n="titulos.sobreMi">Sobre Mí</h2>
+          <h2 class="titulo-neon titulo-seccion" data-i18n="nav.sobreMi">Sobre Mí</h2>
           <div id="sobre-mi-contenedor" class="sobre-mi-contenido"></div>
         </div>
       </section>
 
+      <!-- ========== SKILLS ========== -->
       <section id="skills" class="seccion">
         <div class="container-fluid">
           <h2 class="titulo-neon titulo-seccion">Skills</h2>
@@ -113,9 +116,10 @@
         </div>
       </section>
 
+      <!-- ========== CONTACTO ========== -->
       <section id="contacto" class="seccion">
         <div class="container-fluid">
-          <h2 class="titulo-neon titulo-seccion" data-i18n="titulos.contacto">Contacto</h2>
+          <h2 class="titulo-neon titulo-seccion" data-i18n="nav.contacto">Contacto</h2>
           <p class="texto-seccion mt-3" data-i18n="contacto.intro">¡Colaboremos! Déjame tu mensaje y con gusto me pondré en contacto contigo.</p>
 
           <div class="row g-5 mt-1">
@@ -184,7 +188,6 @@
       </section>
     </main>
   </div>
-
 
   <script type="module" src="/src/main.js"></script>
 </body>

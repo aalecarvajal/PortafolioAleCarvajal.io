@@ -1,5 +1,4 @@
-// Dirección de mi formulario en Formspree (la encuentras en tu cuenta, se ve así:
-// 'https://formspree.io/f/abcdwxyz'). Mientras esté vacía, el formulario abre la app de correo.
+// Dirección de mi formulario en Formspree (está en mi cuenta de formspree.io)
 export const formspreeUrl = 'https://formspree.io/f/mgakelbo';
 
 export const datosContacto = [

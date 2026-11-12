@@ -22,16 +22,21 @@ html {
   scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-}
-
 body {
   min-height: 100vh;
   background: var(--color-fondo) url('/backs/fondo-espacio-4.jpg') top center / cover no-repeat;
   color: var(--color-texto);
+}
+
+/* Si la persona pidió a su sistema reducir el movimiento: sin deslizamiento ni flecha flotando */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .sidebar-flecha {
+    animation: none;
+  }
 }
 
 /* ===========================
@@ -96,15 +101,6 @@ body {
   }
 }
 
-/* ===========================
-   SECCIONES
-   =========================== */
-.seccion {
-  padding-top: calc(var(--altura-navbar) + var(--espacio-seccion));
-  padding-bottom: 4rem;
-  padding-inline: var(--espacio-lateral);
-}
-
 /* Botón ES | EN: el idioma activo se ve más brillante */
 .boton-idioma {
   --bs-btn-padding-y: 0.2rem;
@@ -122,49 +118,23 @@ body {
 }
 
 /* ===========================
-   BARRA LATERAL DE SKILLS
+   SECCIONES (reutilizable)
    =========================== */
-.sidebar-skills {
-  width: var(--ancho-sidebar);
-  flex-shrink: 0;
-  /* alinea el inicio de la barra con el texto del Hero */
-  padding-top: calc(var(--altura-navbar) + var(--espacio-seccion) + var(--altura-titulo-hero));
-  padding-inline: 1rem;
-  background-color: rgba(18, 6, 46, 0.2);
-  backdrop-filter: blur(1px);
+.seccion {
+  padding-top: calc(var(--altura-navbar) + var(--espacio-seccion));
+  padding-bottom: 4rem;
+  padding-inline: var(--espacio-lateral);
 }
 
-.sidebar-instruccion {
-  margin-top: 0.5rem;
-  font-size: 0.8rem;
-  font-style: italic;
-  text-align: center;
-  color: var(--color-acento);
-  animation: pulso 2.5s ease-in-out infinite;
+/* Párrafos de sección (Sobre Mí y Contacto) */
+.texto-seccion {
+  max-width: 50rem;
+  font-size: 1.15rem;
+  line-height: 1.6;
 }
 
-/* Flecha que "flota" hacia abajo para invitar a hacer clic */
-.sidebar-flecha {
-  font-size: 1.4rem;
-  color: var(--color-acento);
-  animation: flotar 1.5s ease-in-out infinite;
-}
-
-@keyframes flotar {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(6px); }
-}
-
-/* Si la persona pidió a su sistema reducir el movimiento, la flecha se queda quieta */
-@media (prefers-reduced-motion: reduce) {
-  .sidebar-flecha {
-    animation: none;
-  }
-}
-
-@keyframes pulso {
-  0%, 100% { opacity: 0.5; }
-  50%      { opacity: 1; }
+.texto-seccion p:last-child {
+  margin-bottom: 0;
 }
 
 /* ===========================
@@ -228,7 +198,7 @@ body {
   font-weight: 600;
 }
 
-/* Efecto de brillo (reutilizable): agrega la clase "tarjeta-brillo" a cualquier tarjeta.
+/* Efecto de brillo: agrega la clase "tarjeta-brillo" a cualquier tarjeta.
    Al pasar el mouse, la tarjeta sube, brilla alrededor y su borde se ilumina. */
 .tarjeta-brillo {
   /* "transition" anima los cambios del :hover en lugar de que sean de golpe */
@@ -254,6 +224,45 @@ body {
   --bs-btn-active-border-color: var(--color-acento);
   border-radius: 2rem;
   font-weight: 600;
+}
+
+/* ===========================
+   BARRA LATERAL DE SKILLS
+   =========================== */
+.sidebar-skills {
+  width: var(--ancho-sidebar);
+  flex-shrink: 0;
+  /* alinea el inicio de la barra con el texto del Hero */
+  padding-top: calc(var(--altura-navbar) + var(--espacio-seccion) + var(--altura-titulo-hero));
+  padding-inline: 1rem;
+  background-color: rgba(18, 6, 46, 0.2);
+  backdrop-filter: blur(1px);
+}
+
+.sidebar-instruccion {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  font-style: italic;
+  text-align: center;
+  color: var(--color-acento);
+  animation: pulso 2.5s ease-in-out infinite;
+}
+
+@keyframes pulso {
+  0%, 100% { opacity: 0.5; }
+  50%      { opacity: 1; }
+}
+
+/* Flecha que "flota" hacia abajo para invitar a hacer clic */
+.sidebar-flecha {
+  font-size: 1.4rem;
+  color: var(--color-acento);
+  animation: flotar 1.5s ease-in-out infinite;
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(6px); }
 }
 
 /* ===========================
@@ -324,31 +333,6 @@ body {
 }
 
 /* ===========================
-   SOBRE MÍ
-   =========================== */
-.texto-seccion {
-  max-width: 50rem;
-  font-size: 1.15rem;
-  line-height: 1.6;
-}
-
-.texto-seccion p:last-child {
-  margin-bottom: 0;
-}
-
-/* Espacio entre el título "Sobre Mí" y su texto */
-.sobre-mi-contenido {
-  margin-top: 4rem;
-}
-
-/* Texto justificado: cada línea llega de borde a borde.
-   El bloque completo (que tiene un ancho máximo) queda centrado en la sección. */
-.texto-justificado {
-  margin-inline: auto;
-  text-align: justify;
-}
-
-/* ===========================
    PROYECTOS
    =========================== */
 .tarjeta-proyecto {
@@ -373,8 +357,7 @@ body {
   box-shadow: 0 0 20px rgba(203, 108, 230, 0.25);
 }
 
-/* El resumen del proyecto usa .tarjeta-texto, que es seminegrita (600);
-   aquí lo dejamos en peso normal para que se lea más ligero */
+/* El resumen usa .tarjeta-texto (seminegrita); aquí va en peso normal para que se lea más ligero */
 .tarjeta-proyecto .tarjeta-texto {
   font-weight: 400;
 }
@@ -423,19 +406,35 @@ body {
   --bs-accordion-btn-active-icon: var(--bs-accordion-btn-icon);
 }
 
-.lista-desafios {
+/* Listas dentro del acordeón (desafíos y resultados) */
+.lista-proyecto {
   padding-left: 1.2rem;
   margin-bottom: 0;
 }
 
-.lista-desafios li + li {
+.lista-proyecto li + li {
   margin-top: 0.5rem;
 }
 
-/* El reto va en su propia línea, con el mismo color y grosor que el resto del texto */
-.lista-desafios strong {
+/* En los desafíos, el reto va en su propia línea, con el mismo grosor que el resto del texto */
+.lista-proyecto strong {
   display: block;
   font-weight: 400;
+}
+
+/* ===========================
+   SOBRE MÍ
+   =========================== */
+/* Espacio entre el título "Sobre Mí" y su texto */
+.sobre-mi-contenido {
+  margin-top: 4rem;
+}
+
+/* Texto justificado: cada línea llega de borde a borde.
+   El bloque completo (que tiene un ancho máximo) queda centrado en la sección. */
+.texto-justificado {
+  margin-inline: auto;
+  text-align: justify;
 }
 
 /* ===========================
@@ -469,6 +468,30 @@ body {
 /* ===========================
    CONTACTO
    =========================== */
+/* Correo y celular (se usan en el Hero y en Contacto) */
+.datos-contacto {
+  margin-bottom: 0;
+}
+
+.dato-contacto {
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.dato-contacto:last-child {
+  margin-bottom: 0;
+}
+
+.dato-contacto .bi {
+  margin-right: 0.5rem;
+  color: var(--color-acento);
+}
+
+.dato-valor {
+  user-select: all; /* un clic selecciona todo el correo o el teléfono */
+}
+
+/* Formulario */
 .formulario-contacto {
   padding: 1.5rem;
 }
@@ -491,25 +514,4 @@ body {
 .formulario-contacto .form-control:focus {
   border-color: var(--color-acento);
   box-shadow: 0 0 0 0.2rem rgba(203, 108, 230, 0.35);
-}
-.datos-contacto {
-  margin-bottom: 0;
-}
-
-.dato-contacto {
-  margin-bottom: 0.4rem;
-  font-weight: 600;
-}
-
-.dato-contacto:last-child {
-  margin-bottom: 0;
-}
-
-.dato-contacto .bi {
-  margin-right: 0.5rem;
-  color: var(--color-acento);
-}
-
-.dato-valor {
-  user-select: all; /* un clic selecciona todo el correo o el teléfono */
 }

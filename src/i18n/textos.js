@@ -12,6 +12,7 @@ export const textos = {
     },
   },
 
+  // Menú. También se usan en los títulos de cada sección
   nav: {
     etiqueta: { es: 'Navegación principal', en: 'Main navigation' },
     logo: { es: 'Ale Carvajal - Inicio', en: 'Ale Carvajal - Home' },
@@ -39,13 +40,6 @@ export const textos = {
     },
   },
 
-  // Títulos de sección
-  titulos: {
-    proyectos: { es: 'Proyectos', en: 'Projects' },
-    sobreMi: { es: 'Sobre Mí', en: 'About Me' },
-    contacto: { es: 'Contacto', en: 'Contact' },
-  },
-
   // Sección de contacto y formulario
   contacto: {
     intro: {
@@ -71,10 +65,6 @@ export const textos = {
       es: '¡Gracias! Tu mensaje fue enviado. Te responderé pronto.',
       en: 'Thanks! Your message has been sent. I’ll be in touch soon.',
     },
-    exitoCorreo: {
-      es: '¡Gracias! Se abrió tu aplicación de correo con el mensaje listo para enviar.',
-      en: 'Thanks! Your email app should open with the message ready to send.',
-    },
     error: {
       es: 'No se pudo enviar el mensaje. Intenta de nuevo o escríbeme directo a mi correo.',
       en: 'The message couldn’t be sent. Please try again or email me directly.',
@@ -84,7 +74,6 @@ export const textos = {
   // Textos que usa la tarjeta de proyecto
   proyecto: {
     proposito: { es: 'Propósito y problema', en: 'Goal and problem' },
-    contexto: { es: 'Contexto y mi aportación', en: 'Context and my contribution' },
     desafios: { es: 'Desafíos y soluciones', en: 'Challenges and solutions' },
     resultados: { es: 'Resultados', en: 'Results' },
     tecnologias: { es: 'Tecnologías', en: 'Technologies' },

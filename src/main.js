@@ -1,7 +1,7 @@
 // ===== Estilos y librerías =====
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import 'bootstrap' // JS de Bootstrap: necesario para el menú hamburguesa y los acordeones
+import 'bootstrap' // JS de Bootstrap: menú hamburguesa, acordeones y scrollspy
 
 import '@fontsource/poppins/400.css'
 import '@fontsource/poppins/600.css'
@@ -72,11 +72,7 @@ botonIdioma.addEventListener('click', () => {
 renderizarPagina();
 
 // ===== Formulario de contacto: los mensajes llegan a mi correo por Formspree =====
-const miCorreo = datosContacto.find((dato) => dato.icono === 'bi-envelope').valor;
-activarFormularioContacto(document.querySelector('#formulario-contacto'), {
-  formspreeUrl,
-  correoDestino: miCorreo,
-});
+activarFormularioContacto(document.querySelector('#formulario-contacto'), formspreeUrl);
 
 // ===== Mi nombre del Hero mide lo mismo de ancho que la descripción =====
 ajustarAlAncho(document.querySelector('#nombre-hero'), document.querySelector('.hero-texto'));

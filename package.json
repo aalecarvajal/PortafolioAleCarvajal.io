@@ -21,7 +21,6 @@
     "@fontsource/league-spartan": "^5.3.0",
     "@fontsource/poppins": "^5.3.0",
     "bootstrap": "^5.3.8",
-    "bootstrap-icons": "^1.13.2",
-    "gsap": "^3.15.0"
+    "bootstrap-icons": "^1.13.2"
   }
 }

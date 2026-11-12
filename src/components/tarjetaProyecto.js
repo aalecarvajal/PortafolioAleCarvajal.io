@@ -43,18 +43,9 @@ function crearPanel(idPadre, idPanel, titulo, contenido) {
   `;
 }
 
-// Lista de desafíos con su solución
-function crearDesafios(desafios) {
-  const items = desafios
-    .map((d) => `<li><strong>${t(d.reto)}</strong> ${t(d.solucion)}</li>`)
-    .join('');
-  return `<ul class="lista-desafios">${items}</ul>`;
-}
-
-// Lista sencilla de textos (por ejemplo, los resultados)
+// Lista con viñetas (desafíos y resultados)
 function crearLista(items) {
-  const elementos = items.map((item) => `<li>${t(item)}</li>`).join('');
-  return `<ul class="lista-desafios">${elementos}</ul>`;
+  return `<ul class="lista-proyecto">${items.map((item) => `<li>${item}</li>`).join('')}</ul>`;
 }
 
 // Botón de enlace; si la url está vacía no se dibuja nada
@@ -89,9 +80,8 @@ export function crearTarjetaProyecto(datos) {
 
         <div class="accordion acordeon-proyecto" id="${idAcordeon}">
           ${crearPanel(idAcordeon, `${datos.id}-proposito`, t(textos.proyecto.proposito), `<p class="mb-0">${t(datos.proposito)}</p>`)}
-          ${datos.contexto ? crearPanel(idAcordeon, `${datos.id}-contexto`, t(textos.proyecto.contexto), `<p class="mb-0">${t(datos.contexto)}</p>`) : ''}
-          ${crearPanel(idAcordeon, `${datos.id}-desafios`, t(textos.proyecto.desafios), crearDesafios(datos.desafios))}
-          ${crearPanel(idAcordeon, `${datos.id}-resultados`, t(textos.proyecto.resultados), crearLista(datos.resultados))}
+          ${crearPanel(idAcordeon, `${datos.id}-desafios`, t(textos.proyecto.desafios), crearLista(datos.desafios.map((d) => `<strong>${t(d.reto)}</strong> ${t(d.solucion)}`)))}
+          ${crearPanel(idAcordeon, `${datos.id}-resultados`, t(textos.proyecto.resultados), crearLista(datos.resultados.map(t)))}
         </div>
 
         <div class="d-flex flex-wrap gap-3 mt-auto">
