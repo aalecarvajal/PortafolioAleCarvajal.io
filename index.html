@@ -9,7 +9,8 @@
   <title>Ale Carvajal | Desarrolladora Full Stack Java</title>
 </head>
 
-<body>
+<!-- Scrollspy de Bootstrap: resalta en el menú (#menuPrincipal) la sección que se está viendo -->
+<body data-bs-spy="scroll" data-bs-target="#menuPrincipal">
 
 
   <!-- ========== NAVBAR FIJA ========== -->
@@ -52,6 +53,8 @@
     <aside class="sidebar-skills d-none d-lg-flex flex-column align-items-center" aria-label="Skills principales" data-i18n-aria="sidebar.etiqueta">
       <h2 class="titulo-neon sidebar-titulo">Soft Skills</h2>
       <p class="sidebar-instruccion" data-i18n="sidebar.instruccion">Haz clic en cada patronus.</p>
+      <!-- Flecha decorativa que señala al primer patronus (aria-hidden: los lectores de pantalla la ignoran) -->
+      <i class="bi bi-arrow-down sidebar-flecha" aria-hidden="true"></i>
       <div id="patronus-contenedor" class="patronus-contenedor flex-grow-1 d-flex flex-column justify-content-around">
       </div>
     </aside>
@@ -99,7 +102,7 @@
       <section id="sobre-mi" class="seccion">
         <div class="container-fluid">
           <h2 class="titulo-neon titulo-seccion" data-i18n="titulos.sobreMi">Sobre Mí</h2>
-          <div id="sobre-mi-contenedor" class="mt-4"></div>
+          <div id="sobre-mi-contenedor" class="sobre-mi-contenido"></div>
         </div>
       </section>
 
@@ -113,19 +116,21 @@
       <section id="contacto" class="seccion">
         <div class="container-fluid">
           <h2 class="titulo-neon titulo-seccion" data-i18n="titulos.contacto">Contacto</h2>
-          <p class="texto-seccion mt-3" data-i18n="contacto.intro">¿Tienes un proyecto en mente o una oportunidad laboral? Me encantaría saber de ti.</p>
+          <p class="texto-seccion mt-3" data-i18n="contacto.intro">¡Colaboremos! Déjame tu mensaje y con gusto me pondré en contacto contigo.</p>
 
           <div class="row g-5 mt-1">
-            <!-- Columna izquierda: mis datos (se llenan con los mismos componentes del Hero) -->
+            <!-- Columna de mis datos (se llenan con los mismos componentes del Hero).
+                 Va después del formulario: "O encuéntrame en:" es la segunda opción -->
             <div class="col-lg-5">
-              <h3 class="titulo-neon subtitulo-contacto" data-i18n="contacto.hablemos">Hablemos</h3>
+              <p class="texto-seccion mb-0" data-i18n="contacto.encuentrame">O encuéntrame en:</p>
               <div class="contenedor-datos-contacto mt-4"></div>
               <div class="contenedor-redes mt-4"></div>
             </div>
 
-            <!-- Columna derecha: formulario. "novalidate" apaga los avisos del navegador
-                 para usar los de Bootstrap, que se ven igual en todos lados -->
-            <div class="col-lg-7">
+            <!-- Columna del formulario. "order-first" de Bootstrap la pone primero
+                 (a la izquierda en computadora y arriba en celular).
+                 "novalidate" apaga los avisos del navegador para usar los de Bootstrap -->
+            <div class="col-lg-7 order-first">
               <form id="formulario-contacto" class="tarjeta formulario-contacto" novalidate>
                 <div class="row g-3">
                   <div class="col-12">

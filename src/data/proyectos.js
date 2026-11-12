@@ -9,20 +9,16 @@ export const proyectos = [
     id: 'ajolote-grulla',
     titulo: {
       es: 'Ajolote & Grulla · E-commerce de papelería japonesa',
-      en: 'Ajolote & Grulla · Japanese stationery e-commerce',
+      en: 'Ajolote & Grulla · Japanese stationery online store',
     },
     resumen: {
-      es: 'E-commerce full stack de papelería japonesa para el mercado mexicano, desarrollado por un equipo de 9 personas con metodología Scrum. Fui Scrum Master y participé en el frontend y el backend.',
-      en: 'Full stack e-commerce for Japanese stationery aimed at the Mexican market, built by a 9-person team using Scrum. I was the Scrum Master and contributed to both the frontend and the backend.',
+      es: 'E-commerce full stack de productos de papelería japonesa para el mercado mexicano, desarrollado por un equipo de 9 personas con metodología Scrum. Fui Scrum Master y participé en el frontend y el backend.',
+      en: 'A full stack e-commerce site for Japanese stationery products aimed at the Mexican market, built by a 9-person team using Scrum. I was the Scrum Master and contributed to both the frontend and the backend.',
     },
     imagen: rutaPublica('portafolio/portada-ajolote-grulla.jpg'),
     proposito: {
-      es: 'Una PYME de papelería japonesa necesitaba vender en línea en México. Creamos una tienda con un catálogo curado y filtros por funcionalidad y estilo de diseño, carrito, pedidos, panel de administración y un chatbot que recomienda productos.',
-      en: 'A small Japanese stationery business needed to sell online in Mexico. We built a store with a curated catalog filtered by function and design style, a shopping cart, orders, an admin panel and a chatbot that recommends products.',
-    },
-    contexto: {
-      es: 'Equipo de 9 personas trabajando en 8 semanas, divididas en 3 sprints. Fui Scrum Master: facilité las ceremonias ágiles y gestioné el Product Backlog en Jira y GitHub. También elaboré la guía de diseño con wireframes y participé en el desarrollo del frontend y del backend.',
-      en: 'A 9-person team working for 8 weeks, split into 3 sprints. As Scrum Master, I facilitated the agile ceremonies and managed the Product Backlog in Jira and GitHub. I also created the design guide with wireframes and contributed to frontend and backend development.',
+      es: 'Una PYME de productos de papelería japonesa necesitaba vender en línea productos que normalmente no encontramos en México. Creamos una tienda con un catálogo curado y filtros que describen la personalidad de cada producto, para que buscar y comprar fuera más atractivo e intuitivo. También desarrollamos el carrito, los pedidos, un panel de administración y un chatbot que recomienda productos.',
+      en: 'A small business that sells Japanese stationery needed an online store for products that are hard to find in Mexico. We built a store with a curated catalog and filters that describe each product’s personality, making searching and shopping more engaging and intuitive. We also developed the shopping cart, orders, an admin panel and a chatbot that recommends products.',
     },
     desafios: [
       {
@@ -33,7 +29,7 @@ export const proyectos = [
         },
       },
       {
-        reto: { es: 'Entregar un e-commerce completo en solo 3 sprints.', en: 'Delivering a complete e-commerce in just 3 sprints.' },
+        reto: { es: 'Entregar un e-commerce completo en solo 3 sprints.', en: 'Delivering a complete e-commerce site in just 3 sprints.' },
         solucion: {
           es: 'Gestioné el Product Backlog en Jira y GitHub con prioridades claras, para que cada sprint se enfocara en lo que más valor aportaba.',
           en: 'I managed the Product Backlog in Jira and GitHub with clear priorities, so each sprint focused on what delivered the most value.',
@@ -51,12 +47,19 @@ export const proyectos = [
       },
     ],
     resultados: [
-      { es: 'E-commerce full stack organizado en 3 sprints de Scrum.', en: 'Full stack e-commerce organized in 3 Scrum sprints.' },
+      {
+        es: 'E-commerce completamente funcional, con propuestas innovadoras que superaron las expectativas del cliente.',
+        en: 'A fully functional e-commerce site with innovative features that exceeded the client’s expectations.',
+      },
+      {
+        es: 'Rebranding de la marca, propuesto junto con la guía de diseño, para reforzar su identidad de papelería japonesa.',
+        en: 'A rebrand, proposed alongside the design guide, to better reflect the store’s Japanese identity.',
+      },
       {
         es: 'Catálogo con filtros, carrito, pedidos, panel de administración y chatbot recomendador.',
         en: 'Catalog with filters, shopping cart, orders, admin panel and recommendation chatbot.',
       },
-      { es: 'Demo publicada en GitHub Pages.', en: 'Demo published on GitHub Pages.' },
+      { es: 'Diseño 100% responsive.', en: '100% responsive design.' },
     ],
     tecnologias: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Java', 'Spring Boot', 'MySQL'],
     enlaces: {
@@ -67,22 +70,18 @@ export const proyectos = [
   {
     id: 'runup',
     titulo: {
-      es: 'RunUp · Ecommerce de tienda deportiva',
-      en: 'RunUp · Sporting goods e-commerce',
+      es: 'RunUp · E-commerce de tienda deportiva',
+      en: 'RunUp · Running gear online store',
     },
     resumen: {
-      es: 'Ecommerce de una tienda de artículos para correr, desarrollado en equipo durante un hackatón de 6 horas. Yo construí el catálogo de productos.',
-      en: 'E-commerce for a running gear store, built as a team during a 6-hour hackathon. I built the product catalog.',
+      es: 'E-commerce de una tienda de artículos para correr, desarrollado en equipo durante un hackatón de 6 horas. Yo construí el catálogo de productos, su base de datos y un sistema de filtros combinables.',
+      en: 'An e-commerce site for a running gear store, built as a team during a 6-hour hackathon. I built the product catalog, its database and a system of combinable filters.',
     },
     imagen: rutaPublica('portafolio/portada-runup-catalogo.png'),
     video: rutaPublica('portafolio/runup-catalogo-v3.mp4'),
     proposito: {
-      es: 'Crear una tienda en línea donde los corredores encuentren rápido lo que necesitan. El catálogo resuelve un problema común en cualquier ecommerce: filtrar muchas opciones hasta llegar al producto correcto y elegir talla, color y cantidad antes de agregarlo al carrito.',
-      en: 'Create an online store where runners can quickly find what they need. The catalog solves a common e-commerce problem: narrowing down many options to the right product and choosing size, color and quantity before adding it to the cart.',
-    },
-    contexto: {
-      es: 'Hackatón con límite de 6 horas, en un equipo de 4 personas. Desarrollé la página de catálogo y la base de datos de productos. Implementé un sistema de filtros combinables por categoría, género, talla, color, tipo de pisada y rango de precio, además de las tarjetas de producto con selección de talla, color y cantidad.',
-      en: 'A 6-hour hackathon in a 4-person team. I developed the catalog page and the product database. I implemented a system of combinable filters by category, gender, size, color, pronation type and price range, plus product cards with size, color and quantity selection.',
+      es: 'Crear una tienda en línea donde los corredores encuentren rápido lo que necesitan. El catálogo resuelve un problema común en cualquier e-commerce: filtrar muchas opciones hasta llegar al producto correcto y elegir talla, color y cantidad antes de agregarlo al carrito.',
+      en: 'The goal was to build an online store where runners can quickly find what they need. The catalog solves a common e-commerce problem: narrowing down many options to the right product and choosing size, color and quantity before adding it to the cart.',
     },
     desafios: [
       {
@@ -108,7 +107,7 @@ export const proyectos = [
       },
     ],
     resultados: [
-      { es: 'Sitio funcional con inicio, catálogo y carrito de compras.', en: 'Working site with home page, catalog and shopping cart.' },
+      { es: 'Sitio funcional con inicio, catálogo y carrito de compras.', en: 'A working site with a home page, catalog and shopping cart.' },
       { es: 'Diseño 100% responsive.', en: '100% responsive design.' },
       { es: 'Entregado dentro del tiempo límite.', en: 'Delivered within the time limit.' },
     ],

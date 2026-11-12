@@ -17,6 +17,17 @@
 /* ===========================
    BASE
    =========================== */
+/* Al dar clic en un enlace del menú, la página se desliza en lugar de saltar */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   min-height: 100vh;
   background: var(--color-fondo) url('/backs/fondo-espacio-4.jpg') top center / cover no-repeat;
@@ -40,6 +51,8 @@ body {
 }
 
 .navbar-portafolio .nav-link {
+  position: relative; /* referencia para colocar la línea de abajo */
+  display: inline-block;
   color: var(--color-texto);
   font-weight: 600;
   transition: color 0.3s;
@@ -47,6 +60,40 @@ body {
 
 .navbar-portafolio .nav-link:hover {
   color: var(--color-acento);
+}
+
+/* Enlace de la sección que se está viendo (la clase "active" la pone el Scrollspy) */
+.navbar-portafolio .nav-link.active {
+  color: #fff;
+}
+
+/* Subrayado neón: una línea que nace en el centro y crece hacia los lados.
+   ::after crea un elemento "falso" dentro del enlace, sin tocar el HTML. */
+.navbar-portafolio .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.2rem;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--color-acento);
+  box-shadow: 0 0 8px var(--color-acento); /* el brillo */
+  transform: scaleX(0); /* empieza sin ancho */
+  transition: transform 0.3s ease;
+}
+
+.navbar-portafolio .nav-link:hover::after,
+.navbar-portafolio .nav-link.active::after {
+  transform: scaleX(1); /* crece a su ancho completo */
+}
+
+/* En pantallas grandes, la línea mide lo mismo que el texto (sin el relleno del enlace) */
+@media (min-width: 992px) {
+  .navbar-portafolio .nav-link::after {
+    left: var(--bs-navbar-nav-link-padding-x);
+    right: var(--bs-navbar-nav-link-padding-x);
+  }
 }
 
 /* ===========================
@@ -94,6 +141,25 @@ body {
   text-align: center;
   color: var(--color-acento);
   animation: pulso 2.5s ease-in-out infinite;
+}
+
+/* Flecha que "flota" hacia abajo para invitar a hacer clic */
+.sidebar-flecha {
+  font-size: 1.4rem;
+  color: var(--color-acento);
+  animation: flotar 1.5s ease-in-out infinite;
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(6px); }
+}
+
+/* Si la persona pidió a su sistema reducir el movimiento, la flecha se queda quieta */
+@media (prefers-reduced-motion: reduce) {
+  .sidebar-flecha {
+    animation: none;
+  }
 }
 
 @keyframes pulso {
@@ -270,6 +336,18 @@ body {
   margin-bottom: 0;
 }
 
+/* Espacio entre el título "Sobre Mí" y su texto */
+.sobre-mi-contenido {
+  margin-top: 4rem;
+}
+
+/* Texto justificado: cada línea llega de borde a borde.
+   El bloque completo (que tiene un ancho máximo) queda centrado en la sección. */
+.texto-justificado {
+  margin-inline: auto;
+  text-align: justify;
+}
+
 /* ===========================
    PROYECTOS
    =========================== */
@@ -391,10 +469,6 @@ body {
 /* ===========================
    CONTACTO
    =========================== */
-.subtitulo-contacto {
-  font-size: 1.8rem;
-}
-
 .formulario-contacto {
   padding: 1.5rem;
 }

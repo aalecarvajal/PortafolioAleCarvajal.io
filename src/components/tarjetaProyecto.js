@@ -89,7 +89,7 @@ export function crearTarjetaProyecto(datos) {
 
         <div class="accordion acordeon-proyecto" id="${idAcordeon}">
           ${crearPanel(idAcordeon, `${datos.id}-proposito`, t(textos.proyecto.proposito), `<p class="mb-0">${t(datos.proposito)}</p>`)}
-          ${crearPanel(idAcordeon, `${datos.id}-contexto`, t(textos.proyecto.contexto), `<p class="mb-0">${t(datos.contexto)}</p>`)}
+          ${datos.contexto ? crearPanel(idAcordeon, `${datos.id}-contexto`, t(textos.proyecto.contexto), `<p class="mb-0">${t(datos.contexto)}</p>`) : ''}
           ${crearPanel(idAcordeon, `${datos.id}-desafios`, t(textos.proyecto.desafios), crearDesafios(datos.desafios))}
           ${crearPanel(idAcordeon, `${datos.id}-resultados`, t(textos.proyecto.resultados), crearLista(datos.resultados))}
         </div>

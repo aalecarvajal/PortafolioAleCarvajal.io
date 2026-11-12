@@ -9,11 +9,11 @@ export const patronus = [
     imagen: rutaPublica('animales/abejas.png'),
     descripcion: {
       es: 'Mi mayor fortaleza es la comunicación. Tengo una gran capacidad para escuchar, entender y transmitir a otros una idea clara y adaptada a su perspectiva. Por ejemplo, en producción de TV me asignaban para escuchar las indicaciones del productor, interpretarlas y comunicarlas al equipo.',
-      en: 'My greatest strength is communication. I’m great at listening, understanding and conveying a clear idea to others, adapted to their perspective. For example, in TV production I was assigned to listen to the producer’s instructions, interpret them and communicate them to the team.',
+      en: 'Communication is my greatest strength. I’m good at listening, understanding and explaining ideas clearly, in a way that makes sense to each person. For example, in TV production I was often the one who listened to the producer’s instructions, interpreted them and passed them on to the team.',
     },
     justificacion: {
       es: 'Las abejas tienen un gran método de comunicación: bailan. Lo hacen para indicar a sus compañeras dónde hay polen para comer. Su comunicación es tan efectiva que transmiten la dirección, la distancia y la calidad del polen.',
-      en: 'Bees have an amazing way of communicating: they dance. They do it to show their teammates where to find pollen. Their communication is so effective that they convey the direction, distance and quality of the pollen.',
+      en: 'Bees have an amazing way of communicating: they dance. They do it to show other bees where to find pollen, and their dance is so precise that it tells them its direction, distance and quality.',
     },
   },
   {
@@ -22,11 +22,11 @@ export const patronus = [
     imagen: rutaPublica('animales/bufalo.png'),
     descripcion: {
       es: 'El sentido de propósito es una gran motivación para lograr la colaboración entre los miembros de un equipo. Entender el objetivo de un proyecto y transmitirlo a mis compañeros es una de mis fortalezas.',
-      en: 'A sense of purpose is a great motivator for collaboration within a team. Understanding a project’s goal and sharing it with my teammates is one of my strengths.',
+      en: 'A shared sense of purpose is what gets a team truly working together. One of my strengths is understanding a project’s goal and helping my teammates see it too.',
     },
     justificacion: {
       es: 'Los búfalos tienen una dinámica de colaboración muy fuerte. Con el propósito claro de sobrevivir ante los depredadores, unen sus fuerzas y son conocidos por ganar la batalla constantemente.',
-      en: 'Buffalo have a very strong collaborative dynamic. With the clear purpose of surviving predators, they join forces and are known for winning the battle again and again.',
+      en: 'Buffalo are incredibly cooperative. With one clear goal, surviving predators, they band together and are known to come out on top again and again.',
     },
   },
   {
@@ -35,11 +35,11 @@ export const patronus = [
     imagen: rutaPublica('animales/elefante.png'),
     descripcion: {
       es: 'Me adapto con facilidad a nuevos entornos, tecnologías o metodologías porque disfruto aprender y conectar los nuevos conocimientos con mi experiencia previa.',
-      en: 'I adapt easily to new environments, technologies and methodologies because I enjoy learning and connecting new knowledge with my previous experience.',
+      en: 'I adapt easily to new environments, technologies and methodologies because I enjoy learning and connecting new knowledge with what I already know.',
     },
     justificacion: {
       es: 'Los elefantes son conocidos por su memoria, pero lo que hay detrás de esto es que tienen una gran capacidad de aprendizaje; por ejemplo, aprenden un nuevo lugar donde encontrar agua.',
-      en: 'Elephants are known for their memory, but what’s behind it is a great capacity to learn; for example, they learn new places where they can find water.',
+      en: 'Elephants are known for their memory, but what’s really behind it is their great ability to learn; for example, they remember new places where they can find water.',
     },
   },
   {
@@ -48,7 +48,7 @@ export const patronus = [
     imagen: rutaPublica('animales/pinguino.png'),
     descripcion: {
       es: 'Llevo 10 años trabajando en equipo y considero que el potencial individual se multiplica colaborando.',
-      en: 'I’ve been working in teams for 10 years, and I believe individual potential multiplies through collaboration.',
+      en: 'I’ve been working in teams for 10 years, and I believe each person’s potential multiplies when we collaborate.',
     },
     justificacion: {
       es: 'Los pingüinos hacen casi todo en comunidad: anidan, cazan y se alimentan. El ejemplo más claro de su trabajo en equipo es que, para sobrevivir al frío, se juntan todos para conservar el calor.',
@@ -61,11 +61,11 @@ export const patronus = [
     imagen: rutaPublica('animales/castor.png'),
     descripcion: {
       es: 'Me gusta usar la creatividad como herramienta para la resolución de problemas: si algo no está funcionando, es porque necesita un cambio. Muchas veces las ideas creativas son las que nos dan una solución.',
-      en: 'I like to use creativity as a problem-solving tool: if something isn’t working, it needs a change. Creative ideas are often the ones that give us a solution.',
+      en: 'I like to use creativity to solve problems: if something isn’t working, it’s a sign that something needs to change. Often, it’s the creative ideas that lead to the solution.',
     },
     justificacion: {
       es: 'Los castores son grandes innovadores. Para mejorar su hábitat y asegurar su supervivencia, construyen presas desde cero para bloquear flujos de agua o hacer pequeños arroyos.',
-      en: 'Beavers are great innovators. To improve their habitat and ensure their survival, they build dams from scratch to block water flows or create small streams.',
+      en: 'Beavers are great innovators. To improve their habitat and ensure their survival, they build dams from scratch to hold back water or create small streams.',
     },
   },
   {

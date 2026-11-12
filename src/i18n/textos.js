@@ -8,7 +8,7 @@ export const textos = {
     },
     descripcion: {
       es: 'Portafolio de Aída Alejandra Carvajal, Desarrolladora Full Stack Java Jr.',
-      en: 'Portfolio of Aída Alejandra Carvajal, Jr Java Full Stack Developer.',
+      en: 'Portfolio of Aída Alejandra Carvajal, Junior Java Full Stack Developer.',
     },
   },
 
@@ -25,13 +25,13 @@ export const textos = {
 
   sidebar: {
     etiqueta: { es: 'Skills principales', en: 'Key skills' },
-    instruccion: { es: 'Haz clic en cada patronus.', en: 'Click on each patronus.' },
+    instruccion: { es: 'Haz clic en cada patronus.', en: 'Click each patronus.' },
   },
 
   hero: {
     texto: {
       es: 'Soy una <strong>Desarrolladora Full Stack Java Jr</strong> con especial interés en el impacto de la colaboración humana para lograr el mejor resultado en el desarrollo de producto. Estoy certificada como <strong>Professional Scrum Master</strong>.',
-      en: 'I’m a <strong>Jr Java Full Stack Developer</strong> with a special interest in how human collaboration leads to the best results in product development. I’m a certified <strong>Professional Scrum Master</strong>.',
+      en: 'I’m a <strong>Junior Java Full Stack Developer</strong> who’s especially interested in how human collaboration leads to better products. I’m also a certified <strong>Professional Scrum Master</strong>.',
     },
     foto: {
       es: 'Fotografía de Aída Alejandra Carvajal',
@@ -49,10 +49,10 @@ export const textos = {
   // Sección de contacto y formulario
   contacto: {
     intro: {
-      es: '¿Tienes un proyecto en mente o una oportunidad laboral? Me encantaría saber de ti.',
-      en: 'Do you have a project in mind or a job opportunity? I’d love to hear from you.',
+      es: '¡Colaboremos! Déjame tu mensaje y con gusto me pondré en contacto contigo.',
+      en: 'Let’s work together! Send me a message and I’ll get back to you.',
     },
-    hablemos: { es: 'Hablemos', en: 'Let’s talk' },
+    encuentrame: { es: 'O encuéntrame en:', en: 'Or reach me at:' },
     nombre: { es: 'Nombre', en: 'Name' },
     nombrePh: { es: 'Tu nombre', en: 'Your name' },
     correo: { es: 'Correo electrónico', en: 'Email' },
@@ -69,11 +69,11 @@ export const textos = {
     enviando: { es: 'Enviando...', en: 'Sending...' },
     exito: {
       es: '¡Gracias! Tu mensaje fue enviado. Te responderé pronto.',
-      en: 'Thank you! Your message was sent. I’ll get back to you soon.',
+      en: 'Thanks! Your message has been sent. I’ll be in touch soon.',
     },
     exitoCorreo: {
       es: '¡Gracias! Se abrió tu aplicación de correo con el mensaje listo para enviar.',
-      en: 'Thank you! Your email app opened with the message ready to send.',
+      en: 'Thanks! Your email app should open with the message ready to send.',
     },
     error: {
       es: 'No se pudo enviar el mensaje. Intenta de nuevo o escríbeme directo a mi correo.',
@@ -83,7 +83,7 @@ export const textos = {
 
   // Textos que usa la tarjeta de proyecto
   proyecto: {
-    proposito: { es: 'Propósito y problema', en: 'Purpose and problem' },
+    proposito: { es: 'Propósito y problema', en: 'Goal and problem' },
     contexto: { es: 'Contexto y mi aportación', en: 'Context and my contribution' },
     desafios: { es: 'Desafíos y soluciones', en: 'Challenges and solutions' },
     resultados: { es: 'Resultados', en: 'Results' },
