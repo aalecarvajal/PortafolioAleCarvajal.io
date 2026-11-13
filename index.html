@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Portafolio de Aída Alejandra Carvajal, Desarrolladora Full Stack Java Jr." />
   <title>Ale Carvajal | Desarrolladora Full Stack Java</title>
-  <script type="module" crossorigin src="/PortafolioAleCarvajal.io/assets/index-CN-rMzmP.js"></script>
-  <link rel="stylesheet" crossorigin href="/PortafolioAleCarvajal.io/assets/index-SClOH6xF.css">
+  <script type="module" crossorigin src="/PortafolioAleCarvajal.io/assets/index-DSnMBDyN.js"></script>
+  <link rel="stylesheet" crossorigin href="/PortafolioAleCarvajal.io/assets/index-C6vORXjv.css">
 </head>
 
 <!-- Scrollspy de Bootstrap: resalta en el menú (#menuPrincipal) la sección que se está viendo -->
@@ -51,14 +51,38 @@
   <!-- ========== BARRA LATERAL DE SKILLS + CONTENIDO ========== -->
   <div class="d-lg-flex">
 
-    <aside class="sidebar-skills d-none d-lg-flex flex-column align-items-center" aria-label="Skills principales" data-i18n-aria="sidebar.etiqueta">
-      <h2 class="titulo-neon sidebar-titulo">Soft Skills</h2>
-      <p class="sidebar-instruccion" data-i18n="sidebar.instruccion">Haz clic en cada patronus.</p>
-      <!-- Flecha decorativa que señala al primer patronus (aria-hidden: los lectores de pantalla la ignoran) -->
-      <i class="bi bi-arrow-down sidebar-flecha" aria-hidden="true"></i>
-      <div id="patronus-contenedor" class="patronus-contenedor flex-grow-1 d-flex flex-column justify-content-around">
+    <aside class="sidebar-skills d-lg-flex flex-column" aria-label="Skills principales" data-i18n-aria="sidebar.etiqueta">
+      <!-- Offcanvas RESPONSIVO de Bootstrap ("offcanvas-lg"):
+           - En computadora (lg en adelante) se ve como una barra lateral normal.
+           - En celular y tablet se esconde y se convierte en un panel que se desliza
+             desde la izquierda al tocar el botón flotante de la abeja.
+           Así usamos el MISMO contenido en los dos tamaños, sin copiar HTML. -->
+      <div class="offcanvas-lg offcanvas-start offcanvas-skills" tabindex="-1" id="panel-skills" aria-labelledby="panel-skills-titulo">
+
+        <!-- Encabezado con botón de cerrar (Bootstrap lo oculta solo en computadora) -->
+        <div class="offcanvas-header">
+          <button type="button" class="btn-close ms-auto" data-bs-dismiss="offcanvas" data-bs-target="#panel-skills"
+            aria-label="Cerrar" data-i18n-aria="sidebar.cerrar"></button>
+        </div>
+
+        <div class="offcanvas-body d-flex flex-column align-items-center">
+          <h2 id="panel-skills-titulo" class="titulo-neon sidebar-titulo">Soft Skills</h2>
+          <p class="sidebar-instruccion" data-i18n="sidebar.instruccion">Haz clic en cada patronus.</p>
+          <!-- Flecha decorativa que señala al primer patronus (aria-hidden: los lectores de pantalla la ignoran) -->
+          <i class="bi bi-arrow-down sidebar-flecha" aria-hidden="true"></i>
+          <div id="patronus-contenedor" class="patronus-contenedor flex-grow-1 d-flex flex-column justify-content-around">
+          </div>
+        </div>
       </div>
     </aside>
+
+    <!-- Botón flotante (solo celular y tablet: "d-lg-none"). Abre el panel de soft skills.
+         data-bs-toggle="offcanvas" + data-bs-target le dicen a Bootstrap qué panel abrir, sin escribir JS. -->
+    <button class="btn boton-neon boton-skills-flotante d-lg-none" type="button"
+      data-bs-toggle="offcanvas" data-bs-target="#panel-skills" aria-controls="panel-skills">
+      <img src="/PortafolioAleCarvajal.io/animales/abejas.png" alt="" width="44" height="44" class="boton-skills-imagen" />
+      <span data-i18n="sidebar.botonMovil">Mis soft skills</span>
+    </button>
 
     <!-- ========== CONTENIDO PRINCIPAL ========== -->
     <main class="flex-grow-1">
@@ -87,7 +111,7 @@
             <!-- Columna de foto -->
             <div class="col-lg-4 col-xxl-5 align-self-center">
               <img src="/PortafolioAleCarvajal.io/img/foto-ale.jpg" width="420" height="420" alt="Fotografía de Aída Alejandra Carvajal" data-i18n-alt="hero.foto"
-                   class="foto-hero" />
+                   class="foto-hero tarjeta-brillo" />
             </div>
 
           </div>
