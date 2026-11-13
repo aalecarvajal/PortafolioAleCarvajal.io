@@ -27,6 +27,8 @@ export const textos = {
   sidebar: {
     etiqueta: { es: 'Skills principales', en: 'Key skills' },
     instruccion: { es: 'Haz clic en cada patronus.', en: 'Click each patronus.' },
+    botonMovil: { es: 'Mis soft skills', en: 'My soft skills' },
+    cerrar: { es: 'Cerrar', en: 'Close' },
   },
 
   hero: {

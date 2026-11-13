@@ -34,7 +34,8 @@ body {
     scroll-behavior: auto;
   }
 
-  .sidebar-flecha {
+  .sidebar-flecha,
+  .boton-skills-imagen {
     animation: none;
   }
 }
@@ -229,14 +230,69 @@ body {
 /* ===========================
    BARRA LATERAL DE SKILLS
    =========================== */
-.sidebar-skills {
-  width: var(--ancho-sidebar);
-  flex-shrink: 0;
-  /* alinea el inicio de la barra con el texto del Hero */
-  padding-top: calc(var(--altura-navbar) + var(--espacio-seccion) + var(--altura-titulo-hero));
-  padding-inline: 1rem;
-  background-color: rgba(18, 6, 46, 0.2);
-  backdrop-filter: blur(1px);
+/* En COMPUTADORA (lg = 992px o más): barra fija a la izquierda */
+@media (min-width: 992px) {
+  .sidebar-skills {
+    width: var(--ancho-sidebar);
+    flex-shrink: 0;
+    /* alinea el inicio de la barra con el texto del Hero */
+    padding-top: calc(var(--altura-navbar) + var(--espacio-seccion) + var(--altura-titulo-hero));
+    padding-inline: 1rem;
+    background-color: rgba(18, 6, 46, 0.2);
+    backdrop-filter: blur(1px);
+  }
+
+  /* El panel y su cuerpo se estiran para ocupar todo el alto de la barra,
+     así los patronus se reparten igual que antes */
+  .offcanvas-skills,
+  .offcanvas-skills .offcanvas-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+}
+
+/* En CELULAR y TABLET: el panel que se desliza desde la izquierda.
+   Bootstrap lo configura con variables (--bs-...), igual que el acordeón y .boton-neon */
+.offcanvas-skills {
+  --bs-offcanvas-width: 300px;
+  --bs-offcanvas-bg: var(--color-fondo);
+  --bs-offcanvas-border-color: rgba(201, 179, 255, 0.35);
+}
+
+/* Cuerpo del panel: columna con todo centrado (título, instrucción, flecha y patronus) */
+.offcanvas-skills .offcanvas-body {
+  display: flex;
+}
+
+/* Los patronus miden lo mismo que en la barra de computadora, centrados en el panel */
+.offcanvas-skills .patronus-contenedor {
+  width: 100%;
+  max-width: calc(var(--ancho-sidebar) - 2rem);
+  gap: 1.5rem;
+}
+
+/* ===========================
+   BOTÓN FLOTANTE DE SKILLS (solo celular y tablet)
+   =========================== */
+.boton-skills-flotante {
+  position: fixed; /* se queda en su lugar aunque hagas scroll */
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 1025; /* encima del contenido, debajo del panel y su fondo oscuro */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  --bs-btn-padding-y: 0.3rem;
+  --bs-btn-padding-x: 1rem;
+  background-color: rgba(18, 6, 46, 0.85);
+  box-shadow: 0 0 18px rgba(203, 108, 230, 0.5);
+}
+
+.boton-skills-imagen {
+  width: 44px;
+  height: 44px;
+  animation: flotar 1.5s ease-in-out infinite; /* reutiliza la animación de la flecha */
 }
 
 .sidebar-instruccion {
@@ -430,11 +486,19 @@ body {
   margin-top: 4rem;
 }
 
-/* Texto justificado: cada línea llega de borde a borde.
-   El bloque completo (que tiene un ancho máximo) queda centrado en la sección. */
-.texto-justificado {
+/* El bloque completo (que tiene un ancho máximo) queda centrado en la sección.
+   En computadora el texto va alineado a la izquierda: es lo más cómodo para leer
+   párrafos largos y no deja huecos entre palabras como el justificado. */
+.texto-sobre-mi {
   margin-inline: auto;
-  text-align: justify;
+  text-align: left;
+}
+
+/* En celular las líneas son cortas, así que centrado se ve mejor */
+@media (max-width: 575.98px) {
+  .texto-sobre-mi {
+    text-align: center;
+  }
 }
 
 /* ===========================
@@ -514,4 +578,32 @@ body {
 .formulario-contacto .form-control:focus {
   border-color: var(--color-acento);
   box-shadow: 0 0 0 0.2rem rgba(203, 108, 230, 0.35);
+}
+
+/* ===========================
+   AJUSTES PARA CELULAR (menos de 576px)
+   =========================== */
+@media (max-width: 575.98px) {
+  /* Quitamos el margen lateral de las secciones para que las tarjetas
+     (proyectos, skills, formulario) usen casi todo el ancho de la pantalla.
+     Basta con cambiar la variable: todas las secciones la usan. */
+  :root {
+    --espacio-lateral: 0;
+  }
+
+  /* Las filas de Bootstrap con espacio grande entre columnas (g-5, gx-5) se salen
+     un poco por los lados. Con menos espacio horizontal ya no se desbordan. */
+  .seccion .row {
+    --bs-gutter-x: 1.5rem;
+  }
+
+  /* Borde y relleno un poco más delgados para ganar espacio para el contenido */
+  .tarjeta {
+    border-width: 4px;
+  }
+
+  .formulario-contacto,
+  .tarjeta-skill {
+    padding: 1rem;
+  }
 }
