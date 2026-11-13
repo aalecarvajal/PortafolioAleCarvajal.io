@@ -33,8 +33,8 @@ export const textos = {
 
   hero: {
     texto: {
-      es: 'Soy una <strong>Desarrolladora Full Stack Java Jr</strong> con especial interés en el impacto de la colaboración humana para lograr el mejor resultado en el desarrollo de producto. Estoy certificada como <strong>Professional Scrum Master</strong>.',
-      en: 'I’m a <strong>Junior Java Full Stack Developer</strong> who’s especially interested in how human collaboration leads to better products. I’m also a certified <strong>Professional Scrum Master</strong>.',
+      es: 'Soy una <strong>Desarrolladora Full Stack Java Jr</strong> con especial interés en el impacto de la colaboración humana para lograr el mejor resultado en el desarrollo de producto. Tengo gran capacidad para detectar áreas de oportunidad en la comunicación de los equipos y establecer soluciones para optimizarla.<span class="d-block mt-3">Estoy certificada como <strong>Professional Scrum Master</strong>.</span>',
+      en: 'I’m a <strong>Junior Java Full Stack Developer</strong> who’s especially interested in how human collaboration leads to better products. I have a knack for identifying communication gaps within teams and putting practical solutions in place to close them.<span class="d-block mt-3">I’m also a certified <strong>Professional Scrum Master</strong>.</span>',
     },
     foto: {
       es: 'Fotografía de Aída Alejandra Carvajal',

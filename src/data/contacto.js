@@ -3,6 +3,11 @@ export const formspreeUrl = 'https://formspree.io/f/mgakelbo';
 
 export const datosContacto = [
   {
+    etiqueta: { es: 'Ubicación', en: 'Location' },
+    valor: 'CDMX, México',
+    icono: 'bi-geo-alt',
+  },
+  {
     etiqueta: { es: 'Correo', en: 'Email' },
     valor: 'aidalecarvajal@gmail.com',
     icono: 'bi-envelope',
