@@ -260,39 +260,11 @@ body {
   --bs-offcanvas-border-color: rgba(201, 179, 255, 0.35);
 }
 
-/* Cuerpo del panel: columna con todo centrado (título, instrucción, flecha y patronus) */
-.offcanvas-skills .offcanvas-body {
-  display: flex;
-}
-
 /* Los patronus miden lo mismo que en la barra de computadora, centrados en el panel */
 .offcanvas-skills .patronus-contenedor {
   width: 100%;
   max-width: calc(var(--ancho-sidebar) - 2rem);
   gap: 1.5rem;
-}
-
-/* ===========================
-   BOTÓN FLOTANTE DE SKILLS (solo celular y tablet)
-   =========================== */
-.boton-skills-flotante {
-  position: fixed; /* se queda en su lugar aunque hagas scroll */
-  left: 1rem;
-  bottom: 1rem;
-  z-index: 1025; /* encima del contenido, debajo del panel y su fondo oscuro */
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  --bs-btn-padding-y: 0.3rem;
-  --bs-btn-padding-x: 1rem;
-  background-color: rgba(18, 6, 46, 0.85);
-  box-shadow: 0 0 18px rgba(203, 108, 230, 0.5);
-}
-
-.boton-skills-imagen {
-  width: 44px;
-  height: 44px;
-  animation: flotar 1.5s ease-in-out infinite; /* reutiliza la animación de la flecha */
 }
 
 .sidebar-instruccion {
@@ -319,6 +291,29 @@ body {
 @keyframes flotar {
   0%, 100% { transform: translateY(0); }
   50%      { transform: translateY(6px); }
+}
+
+/* ===========================
+   BOTÓN FLOTANTE DE SKILLS (solo celular y tablet)
+   =========================== */
+.boton-skills-flotante {
+  position: fixed; /* se queda en su lugar aunque hagas scroll */
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 1025; /* encima del contenido, debajo del panel y su fondo oscuro */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  --bs-btn-padding-y: 0.3rem;
+  --bs-btn-padding-x: 1rem;
+  background-color: rgba(18, 6, 46, 0.85);
+  box-shadow: 0 0 18px rgba(203, 108, 230, 0.5);
+}
+
+.boton-skills-imagen {
+  width: 44px;
+  height: 44px;
+  animation: flotar 1.5s ease-in-out infinite; /* reutiliza la animación de la flecha */
 }
 
 /* ===========================
@@ -394,13 +389,6 @@ body {
 .tarjeta-proyecto {
   padding: 1.5rem;
   font-size: 0.9rem; /* letra un poco más chica en toda la tarjeta */
-}
-
-/* En celular la tarjeta necesita menos relleno para que el contenido respire */
-@media (max-width: 575.98px) {
-  .tarjeta-proyecto {
-    padding: 0.75rem;
-  }
 }
 
 .proyecto-media {
@@ -486,19 +474,9 @@ body {
   margin-top: 4rem;
 }
 
-/* El bloque completo (que tiene un ancho máximo) queda centrado en la sección.
-   En computadora el texto va alineado a la izquierda: es lo más cómodo para leer
-   párrafos largos y no deja huecos entre palabras como el justificado. */
+/* El bloque completo (que tiene un ancho máximo) queda centrado en la sección */
 .texto-sobre-mi {
   margin-inline: auto;
-  text-align: left;
-}
-
-/* En celular las líneas son cortas, así que centrado se ve mejor */
-@media (max-width: 575.98px) {
-  .texto-sobre-mi {
-    text-align: center;
-  }
 }
 
 /* ===========================
@@ -605,5 +583,14 @@ body {
   .formulario-contacto,
   .tarjeta-skill {
     padding: 1rem;
+  }
+
+  .tarjeta-proyecto {
+    padding: 0.75rem;
+  }
+
+  /* Sobre Mí: las líneas son cortas, así que centrado se ve mejor */
+  .texto-sobre-mi {
+    text-align: center;
   }
 }
